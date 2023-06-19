@@ -1,9 +1,57 @@
-<mxfile host="app.diagrams.net" modified="2023-06-19T21:49:03.349Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" version="21.5.0" etag="PTl4J6fDOrOioE2E9Ym3" type="github">
+<mxfile host="app.diagrams.net" modified="2023-06-19T22:12:22.912Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="azNm668s_Q445ACRsVbq" version="21.5.0" type="github">
   <diagram name="Página-1" id="OYloeNWGinfhjjDOEFf0">
-    <mxGraphModel>
+    <mxGraphModel dx="955" dy="521" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="2vxHJ7zRNE8x1xkcuxjA-1" value="NORMATIVA" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="120" y="90" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2vxHJ7zRNE8x1xkcuxjA-2" value="REGISTRO" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="260" y="230" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2vxHJ7zRNE8x1xkcuxjA-3" value="ENTIDAD PUBLICA" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="390" y="90" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2vxHJ7zRNE8x1xkcuxjA-4" value="CATEGORIA" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="260" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2vxHJ7zRNE8x1xkcuxjA-8" value="id&amp;nbsp; nro normativa" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;" vertex="1" parent="1">
+          <mxGeometry x="10" y="80" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2vxHJ7zRNE8x1xkcuxjA-9" value="tipo de normativa" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="80" y="40" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2vxHJ7zRNE8x1xkcuxjA-10" value="fecha de promulgacion" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="180" y="30" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2vxHJ7zRNE8x1xkcuxjA-11" value="se corresponde a" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;rotation=-15;" vertex="1" parent="1">
+          <mxGeometry x="200.18" y="167.08" width="100.54" height="54.21" as="geometry" />
+        </mxCell>
+        <mxCell id="2vxHJ7zRNE8x1xkcuxjA-12" value="id nro registro" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;" vertex="1" parent="1">
+          <mxGeometry x="370" y="220" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2vxHJ7zRNE8x1xkcuxjA-14" value="nombre y descripcion" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="370" y="260" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2vxHJ7zRNE8x1xkcuxjA-15" value="palabras clave" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="370" y="300" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2vxHJ7zRNE8x1xkcuxjA-16" value="id organo legislativo" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;" vertex="1" parent="1">
+          <mxGeometry x="520" y="60" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2vxHJ7zRNE8x1xkcuxjA-17" value="jurisdiccion" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="520" y="100" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2vxHJ7zRNE8x1xkcuxjA-18" value="es emitida por" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="270" y="95" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="2vxHJ7zRNE8x1xkcuxjA-19" value="id categoria" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="320" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2vxHJ7zRNE8x1xkcuxjA-20" value="tiene una" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;rotation=15;" vertex="1" parent="1">
+          <mxGeometry x="60" y="165.79" width="90.05" height="79.99" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
