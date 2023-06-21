@@ -1,1 +1,48 @@
+import mysql.connector
 
+class BasedDatos():
+    def __init__(self):
+        self.coneccion = mysql.connector.connect(host='localhost',
+            port=3306,
+            user='root'
+            password='purosveintepesos2023',
+            db='ProyectoFinal'
+        )
+    def consultarCategoria(self):
+        if self.coneccion.is_connected():
+            cursor=self.coneccion.cursor()
+            cursor.execute("SELECT Categoria_Norma")
+            resultado= cursor.fetchall()
+            return resultado
+       
+def menuPrincipal():
+    
+    while True:
+        print("---MENU PRINCIPAL---")
+        print("1.- Consultar normas")
+        print("2.- Consultar normas")
+        print("3.- Consultar normas")
+        print("4.- Consultar normas")
+        print("5.- Salir")
+        print("--------------------")
+        opcion= int(input("Seleccione una opcion: "))
+    
+        if opcion < 1 or opcion > 5:
+            print("Opcion incorrecta, ingrese nuevamente.")
+        elif opcion == 5:
+            print("¡Gracias por usar el sistema!")
+            break
+        else:
+            ejecutarOpcion(opcion)
+            
+def ejecutarOpcion(opcion):
+    dao = BasedDatos()
+    
+    if opcion ==1:
+        dao.consultarNorma()
+    elif opcion ==2:
+    elif opcion == 3:
+    else opcion == 4:
+    
+    
+menuPrincipal()
