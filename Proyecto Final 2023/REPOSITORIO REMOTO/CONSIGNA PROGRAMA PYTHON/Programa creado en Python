@@ -7,8 +7,27 @@ coneccion = mysql.connector.connect(
             db = 'ProyectoFinal'
             )
 
-
-class BasedDatos():
+#class Normativa():       
+    def consultarNormativa(self):#USAR PARA MOSTRAR ES EL SELECT
+        print("--------CONSULTAR NORMATIVAS----------")
+        cursor= coneccion.cursor()
+        cursor.execute("SELECT * FROM Normativa")
+        varias_norm = cursor.fetchall()
+        x = 0
+        y = 0
+        for bd in varias_norm:
+            print(bd)
+            y +=1   
+    
+    def ingresarNormativa(self):# linea 35 da error q base de datos no toma los parametros
+        print("--------INGRESAR NORMATIVA----------")
+        nomb_nuevo= input("ingrese el nuevo nombre \n")#cambiar
+        edad_nueva= input("ingrese la edad \n")#cambiar
+        cursor= coneccion.cursor()
+        cursor.execute("INSERT INTO usuarios (nombre, edad) VALUES (?,?)", (nomb_nuevo,edad_nueva))
+        cursor.commit()
+        print(f"El usuario{nomb_nuevo} fue agregado exitosamente")
+'''class BasedDatos():
    
     def consultarCategoria(self):
         if self.coneccion.is_connected():
@@ -48,3 +67,4 @@ def ejecutarOpcion(opcion):
     
     
 menuPrincipal()
+'''
