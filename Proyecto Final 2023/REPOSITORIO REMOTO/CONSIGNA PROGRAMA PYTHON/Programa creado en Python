@@ -1,13 +1,15 @@
 import mysql.connector
 
-class BasedDatos():
-    def __init__(self):
-        self.coneccion = mysql.connector.connect(host='localhost',
-            port=3306,
-            user='root'
+coneccion = mysql.connector.connect(     
+            host='localhost',
+            user='root',
             password='purosveintepesos2023',
-            db='ProyectoFinal'
-        )
+            db = 'ProyectoFinal'
+            )
+
+
+class BasedDatos():
+   
     def consultarCategoria(self):
         if self.coneccion.is_connected():
             cursor=self.coneccion.cursor()
