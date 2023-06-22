@@ -2,13 +2,13 @@ import mysql.connector
 
 coneccion = mysql.connector.connect(     
             host='localhost',
-            user='root',
+            user='root',#comprobar la coneccion de la bs con el user y los otros
             password='purosveintepesos2023',
             db = 'ProyectoFinal'
             )
 
 #class Normativa():       
-    def consultarNormativa(self):#USAR PARA MOSTRAR ES EL SELECT
+def consultarNormativa(self):#USAR PARA MOSTRAR ES EL SELECT
         print("--------CONSULTAR NORMATIVAS----------")
         cursor= coneccion.cursor()
         cursor.execute("SELECT * FROM Normativa")
@@ -19,7 +19,7 @@ coneccion = mysql.connector.connect(
             print(bd)
             y +=1   
     
-    def ingresarNormativa(self):# linea 35 da error q base de datos no toma los parametros
+def ingresarNormativa(self):# linea 35 da error q base de datos no toma los parametros
         print("--------INGRESAR NORMATIVA----------")
         nomb_nuevo= input("ingrese el nuevo nombre \n")#cambiar
         edad_nueva= input("ingrese la edad \n")#cambiar
@@ -35,17 +35,17 @@ coneccion = mysql.connector.connect(
             cursor.execute("SELECT Categoria_Norma")
             resultado= cursor.fetchall()
             return resultado
-       
-def menuPrincipal():
+'''       
+def menuPrincipal():# funciona sin problema
     
     while True:
-        print("---MENU PRINCIPAL---")
-        print("1.- Consultar normas")
-        print("2.- Consultar normas")
-        print("3.- Consultar normas")
-        print("4.- Consultar normas")
+        print("------MENU PRINCIPAL------")
+        print("1.- Consultar normas")#cambiar por el orden de los metodos
+        print("2.- Consultar normas")# un metodo cada opcion
+        print("3.- Consultar normas")#tal vez 1°class DataBase
+        print("4.- Consultar normas")#2° class normativa
         print("5.- Salir")
-        print("--------------------")
+        print("--------------------------")
         opcion= int(input("Seleccione una opcion: "))
     
         if opcion < 1 or opcion > 5:
@@ -55,7 +55,7 @@ def menuPrincipal():
             break
         else:
             ejecutarOpcion(opcion)
-            
+'''            
 def ejecutarOpcion(opcion):
     dao = BasedDatos()
     
