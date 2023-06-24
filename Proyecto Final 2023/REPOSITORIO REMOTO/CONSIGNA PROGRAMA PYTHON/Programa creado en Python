@@ -1,70 +1,109 @@
-import mysql.connector
+import mysql.connector # CONECCION EXITOSA
+
 
 coneccion = mysql.connector.connect(     
             host='localhost',
-            user='root',#comprobar la coneccion de la bs con el user y los otros
+            port='3306',
+            user='root',
             password='purosveintepesos2023',
-            db = 'ProyectoFinal'
+            db = 'proyectofinal'
             )
-
-#class Normativa():       
-def consultarNormativa(self):#USAR PARA MOSTRAR ES EL SELECT
+cursor = coneccion.cursor()
+ 
+class tipoNormativa():
+    def __init__ (self):
+        self.normativa = "normativa"
+        self.descripcion = "palabras claves"
+    
+    def mostrarTipoNormativa(self):
         print("--------CONSULTAR NORMATIVAS----------")
-        cursor= coneccion.cursor()
-        cursor.execute("SELECT * FROM Normativa")
-        varias_norm = cursor.fetchall()
-        x = 0
-        y = 0
-        for bd in varias_norm:
-            print(bd)
-            y +=1   
+        cursor = coneccion.cursor()
+        cursor.execute("SELECT * FROM Tipo_Normativa")
+        self.tipos_normas=cursor.fetchall()
+        y=0
+        for i in self.tipos_normas:
+            print(self.tipos_normas)
+        y+=1
+        
+        
+    def eliminarTipoNormativa(self):
+         print("--------ELIMINAR NORMATIVA----------")
+         norm.mostrarTipoNormativa()
+         cursor = coneccion.cursor()
+         elim_norm= input("Ingrese el numero de la Normativa que eliminara")
+         cursor.execute("DELETE * FROM Tipo_Normativa WHERE numero=?",(elim_norm))
+         print("Normativa eliminada correctamente.")
+         
+           
+class organo_publico():
+    def __init__ (self):
+        self.organo = "Organos Legislativos"
+        self.descripcion = "ambito_Aplicacion"
+    def mostrar_organo(self):
+        print("--------CONSULTAR ORGANO LEGISLATIVO----------")
+        cursor = coneccion.cursor()
+        cursor.execute("SELECT * FROM Organo_Publico")
+        self.nor=cursor.fetchall()
+        for i in self.nor:
+            print(1)
+    def consultar_id():
+        cursor = coneccion.cursor()
+        cursor.execute("SELECT * FROM Organo_Publico WHERE idOrgano=?", (id))
+        varios_organos=cursor.fetchall()
+        for i in varios_organos:
+            print(i)
+        
+        
+    def insertarOrgano(self):
+        print("*******INSERTAR ORGANO PUBLICO*********")
+        
+        self.organo = input("Ingrese nombre del Organo Legislativo")
+        
+        cursor = coneccion.cursor()
+        cursor.execute("INSERT INTO organo_publico (Organos_Legislativos,ambito_Aplicacion) VALUES (?,?)", (self.organo, self.descripcion))
+        self.coneccion.commit()
+        print(f"El Organo Legislativo {self.organo} se agrego exitosamente. ")
+        
+    def actualizar_descripcion(self):
+        print("***********ACTUALIZACIONES************")
+        dao.mostrar_organo()
+        print("Ingrese el dato que desea actualizar\n")
+        dao.consultar_id()
+        id_organo=int(input("Ingrese el codigo id de la Entidad legislativa"))
+        codigo=input("Ingrese el dato para actualizar")
+        query= "UPDATE Organo_Publico SET idOragano =? WHERE codigo=?"
+        values=(id_organo,codigo)
+        cursor = coneccion.cursor()
+        cursor.execute(query, values)
+        coneccion.commit()
+        print("Descripción actualizada correctamente.")         
+        
+norm = tipoNormativa()    
+dao = organo_publico()
+
+while True:
+    print("---MENU PRINCIPAL---")
+    print("1.- Consultar Tipo de Normativas")
+    print("2.- Eliminar Tipo de Normativa")
+    print("3.- Insertar Normativa")
+    print("4.- Actualizar Normativa")
+    print("5.- Eliminar Normativa")
+    print("6.- Salir")
+    print("--------------------")
+    opcion= int(input("Seleccione una opcion: "))
     
-def ingresarNormativa(self):# linea 35 da error q base de datos no toma los parametros
-        print("--------INGRESAR NORMATIVA----------")
-        nomb_nuevo= input("ingrese el nuevo nombre \n")#cambiar
-        edad_nueva= input("ingrese la edad \n")#cambiar
-        cursor= coneccion.cursor()
-        cursor.execute("INSERT INTO usuarios (nombre, edad) VALUES (?,?)", (nomb_nuevo,edad_nueva))
-        cursor.commit()
-        print(f"El usuario{nomb_nuevo} fue agregado exitosamente")
-'''class BasedDatos():
-   
-    def consultarCategoria(self):
-        if self.coneccion.is_connected():
-            cursor=self.coneccion.cursor()
-            cursor.execute("SELECT Categoria_Norma")
-            resultado= cursor.fetchall()
-            return resultado
-'''       
-def menuPrincipal():# funciona sin problema
-    
-    while True:
-        print("------MENU PRINCIPAL------")
-        print("1.- Consultar normas")#cambiar por el orden de los metodos
-        print("2.- Consultar normas")# un metodo cada opcion
-        print("3.- Consultar normas")#tal vez 1°class DataBase
-        print("4.- Consultar normas")#2° class normativa
-        print("5.- Salir")
-        print("--------------------------")
-        opcion= int(input("Seleccione una opcion: "))
-    
-        if opcion < 1 or opcion > 5:
-            print("Opcion incorrecta, ingrese nuevamente.")
-        elif opcion == 5:
-            print("¡Gracias por usar el sistema!")
-            break
-        else:
-            ejecutarOpcion(opcion)
-'''            
-def ejecutarOpcion(opcion):
-    dao = BasedDatos()
-    
-    if opcion ==1:
-        dao.consultarNorma()
-    elif opcion ==2:
+    if opcion < 1 or opcion > 6:
+        print("Opcion incorrecta, ingrese nuevamente.")
+    elif opcion == 6:
+        print("¡Gracias por usar el sistema!")
+        break
+    elif opcion == 1:
+        norm.mostrarTipoNormativa()
+    elif opcion == 2:
+        norm.eliminarTipoNormativa()
     elif opcion == 3:
-    else opcion == 4:
-    
-    
-menuPrincipal()
-'''
+        dao.insertarOrgano()
+    else:
+        dao.actualizarDescripcion()
+
+coneccion.close()
